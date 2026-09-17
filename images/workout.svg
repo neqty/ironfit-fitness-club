@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+<rect width="900" height="600" fill="#171a1d"/>
+<rect x="45" y="45" width="810" height="510" rx="35" fill="#22262a" stroke="#30363b" stroke-width="3"/>
+<circle cx="450" cy="240" r="105" fill="#b6ff00" opacity=".9"/>
+<rect x="250" y="385" width="400" height="28" rx="14" fill="#f5f7f8"/>
+<rect x="315" y="435" width="270" height="14" rx="7" fill="#aeb6bd"/>
+<text x="450" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="34" font-weight="900" fill="#0d0f10">WORKOUT</text>
+<text x="450" y="505" text-anchor="middle" font-family="Arial" font-size="22" fill="#aeb6bd">Strength · Cardio · Group</text>
+</svg>
