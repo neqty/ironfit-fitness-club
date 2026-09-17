@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Page created by Арсен -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | IRONFIT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="main-header">
+  <div class="container nav-wrap">
+    <a class="logo" href="index.html">IRON<span>FIT</span></a>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="trainers.html">Trainers</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">CONTACT & REGISTRATION</p>
+      <h1>Start your fitness journey</h1>
+      <p class="lead">Fill in the form and choose your preferred membership.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container form-grid">
+      <form id="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="plan">Membership</label>
+        <select id="plan" name="plan">
+          <option>Basic</option>
+          <option>Standard</option>
+          <option>Premium</option>
+        </select>
+
+        <label>Preferred training time</label>
+        <div class="radio-row">
+          <label><input type="radio" name="time" value="morning" checked> Morning</label>
+          <label><input type="radio" name="time" value="evening"> Evening</label>
+        </div>
+
+        <label for="accent">Choose your profile color</label>
+        <input id="accent" name="accent" type="color" value="#b6ff00">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us about your goal"></textarea>
+
+        <button type="submit">Send registration</button>
+      </form>
+
+      <div class="contact-card">
+        <img class="feature-img" src="images/contact.svg" alt="Fitness club reception illustration">
+        <h2>IRONFIT Fitness Club</h2>
+        <p>Open daily: 06:00–23:00</p>
+        <p>Email: hello@ironfit.example</p>
+        <h3>Page creator</h3>
+        <p><strong>Арсен</strong> created the Contact and Pricing pages, including the required form and data table.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer>
+  <div class="container">
+    <p>Front-End Assignment #1 · Fitness Club Website</p>
+    <p>Team members: Абылайхан · Ерасыл · Арсен</p>
+  </div>
+</footer>
+
+</body>
+</html>
