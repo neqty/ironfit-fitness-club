@@ -5,157 +5,256 @@
   <!-- Page created by Ерасыл -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>About Us | IRONFIT</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<header id="main-header">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
-  <div class="container nav-wrap">
+  <div class="container">
 
-    <a class="logo" href="index.html">
+    <a class="navbar-brand fw-bold ironfit-logo" href="index.html">
       IRON<span>FIT</span>
     </a>
 
-    <nav class="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="trainers.html">Trainers</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+      <ul class="navbar-nav ms-auto gap-lg-3">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+      </ul>
+
+    </div>
 
   </div>
 
-</header>
+</nav>
+
 
 <main>
 
-  <section class="page-hero">
-    <div class="container">
+  <section class="page-hero py-5">
 
-      <p class="eyebrow">ABOUT US</p>
+    <div class="container py-lg-4">
 
-      <h1>More than a gym</h1>
+      <p class="eyebrow mb-2">
+        ABOUT US
+      </p>
 
-      <p class="lead">
+      <h1 class="responsive-title fw-bold text-uppercase mb-3">
+        More than a gym
+      </h1>
+
+      <p class="responsive-text text-secondary mb-0">
         Our goal is to create a motivating environment
         where students and adults can build healthy habits.
       </p>
 
     </div>
+
   </section>
 
-  <section class="section">
 
-    <div class="container two-col">
-
-      <div>
-
-        <h2>Our story</h2>
-
-        <p>
-          IRONFIT was created as a student project
-          to demonstrate a complete multi-page website.
-        </p>
-
-        <p>
-          The club focuses on accessibility,
-          simple membership plans and community.
-        </p>
-
-        <h3>Our values</h3>
-
-        <ol>
-          <li>Consistency</li>
-          <li>Respect</li>
-          <li>Progress</li>
-        </ol>
-
-      </div>
-
-      <img
-        class="feature-img"
-        src="images/about.webp"
-        alt="Fitness club members training">
-
-    </div>
-  </section>
-
-  <section class="section alt">
+  <!-- BOOTSTRAP TWO COLUMN GRID -->
+  <section class="py-5">
 
     <div class="container">
 
-      <h2>About the Team Members</h2>
+      <div class="row align-items-center g-5">
 
-      <div class="team-flex">
+        <div class="col-12 col-lg-6">
 
-        <article class="card">
+          <h2 class="fw-bold mb-3">
+            Our story
+          </h2>
 
-          <img
-            class="profile-img"
-            src="images/abylai.jpg"
-            alt="Photo of Abylaikhan">
-
-          <h3>Абылайхан</h3>
-
-          <p>
-            Created the Home and Programs pages
-            and helped with the website structure.
+          <p class="text-secondary">
+            IRONFIT was created as a student project
+            to demonstrate a complete multi-page website.
           </p>
 
-        </article>
-
-        <article class="card">
-
-          <img
-            class="profile-img"
-            src="images/PHOTO-2026-09-25-15-36-45.jpg"
-            alt="Photo of Erasyl">
-
-          <h3>Ерасыл</h3>
-
-          <p>
-            Created the About and Trainers pages
-            and prepared team information.
+          <p class="text-secondary">
+            The club focuses on accessibility,
+            simple membership plans and community.
           </p>
 
-        </article>
+          <h3 class="mt-lg-4 mb-3">
+            Our values
+          </h3>
 
-        <article class="card">
+          <ol class="text-secondary">
+            <li>Consistency</li>
+            <li>Respect</li>
+            <li>Progress</li>
+          </ol>
+
+        </div>
+
+
+        <div class="col-12 col-lg-6">
 
           <img
-            class="profile-img"
-            src="images/arsen.jpg"
-            alt="Photo of Arsen">
+            src="images/about.webp"
+            class="img-fluid rounded-4"
+            alt="Fitness club members training">
 
-          <h3>Арсен</h3>
-
-          <p>
-            Created the Pricing and Contact pages
-            and worked with forms and tables.
-          </p>
-
-        </article>
+        </div>
 
       </div>
 
     </div>
+
+  </section>
+
+
+  <!-- BOOTSTRAP 3 COLUMN GRID -->
+  <section class="py-5 bg-panel">
+
+    <div class="container">
+
+      <h2 class="fw-bold mb-4">
+        About the Team Members
+      </h2>
+
+      <div class="row g-4">
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <article class="card bootstrap-card h-100 text-center">
+
+            <div class="card-body">
+
+              <img
+                src="images/abylai.jpg"
+                class="team-photo mx-auto mb-3"
+                alt="Photo of Abylaikhan">
+
+              <h3 class="card-title">
+                Абылайхан
+              </h3>
+
+              <p class="card-text text-secondary">
+                Created the Home and Programs pages
+                and worked with Bootstrap components.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <article class="card bootstrap-card h-100 text-center">
+
+            <div class="card-body">
+
+              <img
+                src="images/PHOTO-2026-09-25-15-36-45.jpg"
+                class="team-photo mx-auto mb-3"
+                alt="Photo of Erasyl">
+
+              <h3 class="card-title">
+                Ерасыл
+              </h3>
+
+              <p class="card-text text-secondary">
+                Created the About and Trainers pages
+                and worked with Bootstrap Grid and Cards.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <article class="card bootstrap-card h-100 text-center">
+
+            <div class="card-body">
+
+              <img
+                src="images/arsen.jpg"
+                class="team-photo mx-auto mb-3"
+                alt="Photo of Arsen">
+
+              <h3 class="card-title">
+                Арсен
+              </h3>
+
+              <p class="card-text text-secondary">
+                Created the Pricing and Contact pages
+                and worked with forms and buttons.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
 
 </main>
 
-<footer>
+
+<footer class="py-4 border-top border-secondary text-center">
 
   <div class="container">
-    <p>Front-End Assignment #2 · Fitness Club Website</p>
-    <p>Team members: Абылайхан · Ерасыл · Арсен</p>
+
+    <p class="mb-1">
+      Front-End Assignment #3 · Fitness Club Website
+    </p>
+
+    <p class="mb-0 text-secondary">
+      Team members: Абылайхан · Ерасыл · Арсен
+    </p>
+
   </div>
 
 </footer>
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
 </html>

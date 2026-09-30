@@ -5,142 +5,241 @@
   <!-- Page created by Абылайхан -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Programs | IRONFIT</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<header id="main-header">
-  <div class="container nav-wrap">
-    <a class="logo" href="index.html">IRON<span>FIT</span></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
 
-    <nav class="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="trainers.html">Trainers</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <a class="navbar-brand fw-bold ironfit-logo" href="index.html">
+      IRON<span>FIT</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+      <ul class="navbar-nav ms-auto gap-lg-3">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="programs.html">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+      </ul>
+
+    </div>
   </div>
-</header>
+</nav>
+
 
 <main>
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">TRAINING PROGRAMS</p>
-      <h1>Choose your way to train</h1>
-      <p class="lead">
+  <section class="page-hero py-5">
+
+    <div class="container py-lg-4">
+
+      <p class="eyebrow mb-2">
+        TRAINING PROGRAMS
+      </p>
+
+      <h1 class="responsive-title fw-bold text-uppercase mb-3">
+        Choose your way to train
+      </h1>
+
+      <p class="responsive-text text-secondary mb-0">
         Different goals need different training styles.
       </p>
-    </div>
-  </section>
-
-  <section class="section">
-
-    <div class="container program-flex">
-
-      <article class="card">
-
-        <img
-          class="program-img"
-          src="images/strength.svg"
-          alt="Strength training illustration">
-
-        <h3>Strength</h3>
-
-        <p>
-          Build muscle and improve total-body strength.
-        </p>
-
-        <ul>
-          <li>Free weights</li>
-          <li>Machines</li>
-          <li>Progress tracking</li>
-        </ul>
-
-        <a class="btn card-btn" href="contact.html">
-          Start Strength
-        </a>
-
-      </article>
-
-      <article class="card">
-
-        <img
-          class="program-img"
-          src="images/cardio.svg"
-          alt="Cardio training illustration">
-
-        <h3>Cardio</h3>
-
-        <p>
-          Improve endurance and heart health.
-        </p>
-
-        <ul>
-          <li>Treadmills</li>
-          <li>Bikes</li>
-          <li>Interval sessions</li>
-        </ul>
-
-        <a class="btn card-btn" href="contact.html">
-          Start Cardio
-        </a>
-
-      </article>
-
-      <article class="card">
-
-        <img
-          class="program-img"
-          src="images/group.svg"
-          alt="Group fitness illustration">
-
-        <h3>Group Fitness</h3>
-
-        <p>
-          Train with energy and motivation in a group.
-        </p>
-
-        <ul>
-          <li>HIIT</li>
-          <li>Functional training</li>
-          <li>Mobility</li>
-        </ul>
-
-        <a class="btn card-btn" href="contact.html">
-          Join Class
-        </a>
-
-      </article>
 
     </div>
+
   </section>
 
-  <section class="section alt">
+
+  <!-- BOOTSTRAP 3 COLUMN GRID + CARDS -->
+  <section class="py-5">
+
     <div class="container">
 
-      <h2>Page creator</h2>
+      <div class="row g-4">
 
-      <p>
-        <strong>Абылайхан</strong> created the Programs
-        page and the Home page.
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <article class="card bootstrap-card h-100">
+
+            <img
+              src="images/strength.webp"
+              class="card-img-top program-photo"
+              alt="Strength training">
+
+            <div class="card-body d-flex flex-column">
+
+              <h3 class="card-title">
+                Strength
+              </h3>
+
+              <p class="card-text text-secondary">
+                Build muscle and improve total-body strength.
+              </p>
+
+              <ul class="text-secondary">
+                <li>Free weights</li>
+                <li>Machines</li>
+                <li>Progress tracking</li>
+              </ul>
+
+              <a
+                class="btn btn-success mt-auto"
+                href="contact.html">
+                Start Strength
+              </a>
+
+            </div>
+          </article>
+
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <article class="card bootstrap-card h-100">
+
+            <img
+              src="images/cardio.jpg"
+              class="card-img-top program-photo"
+              alt="Cardio training">
+
+            <div class="card-body d-flex flex-column">
+
+              <h3 class="card-title">
+                Cardio
+              </h3>
+
+              <p class="card-text text-secondary">
+                Improve endurance and heart health.
+              </p>
+
+              <ul class="text-secondary">
+                <li>Treadmills</li>
+                <li>Bikes</li>
+                <li>Interval sessions</li>
+              </ul>
+
+              <a
+               class="btn btn-success mt-auto"
+               href="contact.html">
+              Start Cardio
+              </a>
+
+            </div>
+          </article>
+
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <article class="card bootstrap-card h-100">
+
+            <img
+              src="images/group.webp"
+              class="card-img-top program-photo"
+              alt="Group fitness">
+
+            <div class="card-body d-flex flex-column">
+
+              <h3 class="card-title">
+                Group Fitness
+              </h3>
+
+              <p class="card-text text-secondary">
+                Train with energy and motivation in a group.
+              </p>
+
+              <ul class="text-secondary">
+                <li>HIIT</li>
+                <li>Functional training</li>
+                <li>Mobility</li>
+              </ul>
+
+              <a
+                class="btn btn-success mt-auto"
+                href="contact.html">
+                Join Class
+              </a>
+
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-5 bg-panel">
+
+    <div class="container">
+
+      <h2 class="fw-bold mb-3">
+        Page creator
+      </h2>
+
+      <p class="text-secondary mb-0">
+        <strong class="text-light">Абылайхан</strong>
+        created the Programs and Home pages.
       </p>
 
     </div>
+
   </section>
 
 </main>
 
-<footer>
+
+<footer class="py-4 border-top border-secondary text-center">
+
   <div class="container">
-    <p>Front-End Assignment #2 · Fitness Club Website</p>
-    <p>Team members: Абылайхан · Ерасыл · Арсен</p>
+
+    <p class="mb-1">
+      Front-End Assignment #3 · Fitness Club Website
+    </p>
+
+    <p class="mb-0 text-secondary">
+      Team members: Абылайхан · Ерасыл · Арсен
+    </p>
+
   </div>
+
 </footer>
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
 </html>
