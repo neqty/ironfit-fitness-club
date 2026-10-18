@@ -17,12 +17,12 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top site-navbar">
 
   <div class="container">
 
     <a class="navbar-brand fw-bold ironfit-logo" href="index.html">
-      IRON<span>FIT</span>
+      IRON<span>FIT</span><small class="brand-subtitle">FITNESS CLUB</small>
     </a>
 
     <button
@@ -50,6 +50,7 @@
         <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
 
       </ul>
+      <a class="nav-join btn btn-success ms-lg-4 mt-3 mt-lg-0" href="contact.html">JOIN THE CLUB <span aria-hidden="true">↗</span></a>
 
     </div>
 
@@ -60,7 +61,7 @@
 
 <main>
 
-  <section class="page-hero py-5">
+  <section class="page-hero py-5" data-section="06 / CONTACT">
 
     <div class="container py-lg-4">
 
@@ -69,7 +70,7 @@
       </p>
 
       <h1 class="responsive-title fw-bold text-uppercase mb-3">
-        Start your fitness journey
+        Make your first move.
       </h1>
 
       <p class="responsive-text text-secondary mb-0">
@@ -91,7 +92,7 @@
         <div class="col-12 col-lg-6">
 
           <!-- BOOTSTRAP FORM -->
-          <form class="contact-form p-4 p-lg-5 rounded-4">
+          <form id="registration-form" class="contact-form p-4 p-lg-5 rounded-4" novalidate>
 
             <div class="mb-3">
 
@@ -107,7 +108,10 @@
                 type="text"
                 class="form-control"
                 placeholder="Your name"
+                autocomplete="name"
+                aria-describedby="name-error"
                 required>
+              <p id="name-error" class="field-error" role="alert"></p>
 
             </div>
 
@@ -132,9 +136,12 @@
                   type="email"
                   class="form-control"
                   placeholder="you@example.com"
+                  autocomplete="email"
+                  aria-describedby="email-error"
                   required>
 
               </div>
+              <p id="email-error" class="field-error" role="alert"></p>
 
             </div>
 
@@ -160,6 +167,24 @@
 
             </div>
 
+
+
+            <!-- Assignment 4 · Task 1: password length and confirmation checks -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Create a demo password</label>
+              <input id="password" name="password" type="password" class="form-control"
+                     placeholder="At least 8 characters" autocomplete="new-password"
+                     aria-describedby="password-error" minlength="8" required>
+              <p id="password-error" class="field-error" role="alert"></p>
+            </div>
+
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label">Confirm demo password</label>
+              <input id="confirm-password" name="confirmPassword" type="password"
+                     class="form-control" placeholder="Repeat your password"
+                     autocomplete="new-password" aria-describedby="confirm-password-error" required>
+              <p id="confirm-password-error" class="field-error" role="alert"></p>
+            </div>
 
             <fieldset class="mb-3">
 
@@ -219,8 +244,9 @@
                 name="message"
                 class="form-control"
                 rows="5"
-                placeholder="Tell us about your goal">
-              </textarea>
+                placeholder="Tell us about your goal"
+                aria-describedby="message-error" required></textarea>
+              <p id="message-error" class="field-error" role="alert"></p>
 
             </div>
 
@@ -228,8 +254,12 @@
             <button
               type="submit"
               class="btn btn-success btn-lg w-100">
-              Send Registration
+              Validate Registration
             </button>
+            <p class="form-note text-secondary mt-3 mb-1">
+              Assignment demonstration only: information is checked in your browser and is not submitted or saved.
+            </p>
+            <p id="registration-status" class="form-feedback mb-0" role="status" aria-live="polite"></p>
 
           </form>
 
@@ -281,12 +311,14 @@
   <div class="container">
 
     <p class="mb-1">
-      Front-End Assignment #3 · Fitness Club Website
+      IRONFIT / FITNESS CLUB · STUDENT FRONT-END PROJECT
     </p>
 
     <p class="mb-0 text-secondary">
-      Team members: Абылайхан · Ерасыл · Арсен
+      BUILT BY АБЫЛАЙХАН · ЕРАСЫЛ · АРСЕН
     </p>
+    <!-- Assignment 4 · Task 5: dynamic local date & time -->
+    <p class="footer-clock mt-2 mb-0">Local date &amp; time: <time id="current-date-time">Loading...</time></p>
 
   </div>
 
@@ -296,6 +328,9 @@
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
+<script src="js/site.js" defer></script>
+<script src="js/contact.js" defer></script>
 
 </body>
 </html>

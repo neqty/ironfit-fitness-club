@@ -17,11 +17,11 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top site-navbar">
   <div class="container">
 
     <a class="navbar-brand fw-bold ironfit-logo" href="index.html">
-      IRON<span>FIT</span>
+      IRON<span>FIT</span><small class="brand-subtitle">FITNESS CLUB</small>
     </a>
 
     <button
@@ -48,6 +48,7 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
       </ul>
+      <a class="nav-join btn btn-success ms-lg-4 mt-3 mt-lg-0" href="contact.html">JOIN THE CLUB <span aria-hidden="true">↗</span></a>
 
     </div>
   </div>
@@ -56,7 +57,7 @@
 
 <main>
 
-  <section class="page-hero py-5">
+  <section class="page-hero py-5" data-section="03 / PROGRAMS">
 
     <div class="container py-lg-4">
 
@@ -65,7 +66,7 @@
       </p>
 
       <h1 class="responsive-title fw-bold text-uppercase mb-3">
-        Choose your way to train
+        Find your kind of strong.
       </h1>
 
       <p class="responsive-text text-secondary mb-0">
@@ -225,12 +226,14 @@
   <div class="container">
 
     <p class="mb-1">
-      Front-End Assignment #3 · Fitness Club Website
+      IRONFIT / FITNESS CLUB · STUDENT FRONT-END PROJECT
     </p>
 
     <p class="mb-0 text-secondary">
-      Team members: Абылайхан · Ерасыл · Арсен
+      BUILT BY АБЫЛАЙХАН · ЕРАСЫЛ · АРСЕН
     </p>
+    <!-- Assignment 4 · Task 5: dynamic local date & time -->
+    <p class="footer-clock mt-2 mb-0">Local date &amp; time: <time id="current-date-time">Loading...</time></p>
 
   </div>
 
@@ -240,6 +243,8 @@
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
+<script src="js/site.js" defer></script>
 
 </body>
 </html>

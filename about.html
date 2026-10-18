@@ -17,12 +17,12 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top site-navbar">
 
   <div class="container">
 
     <a class="navbar-brand fw-bold ironfit-logo" href="index.html">
-      IRON<span>FIT</span>
+      IRON<span>FIT</span><small class="brand-subtitle">FITNESS CLUB</small>
     </a>
 
     <button
@@ -50,6 +50,7 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
       </ul>
+      <a class="nav-join btn btn-success ms-lg-4 mt-3 mt-lg-0" href="contact.html">JOIN THE CLUB <span aria-hidden="true">↗</span></a>
 
     </div>
 
@@ -60,7 +61,7 @@
 
 <main>
 
-  <section class="page-hero py-5">
+  <section class="page-hero py-5" data-section="02 / ABOUT">
 
     <div class="container py-lg-4">
 
@@ -69,7 +70,7 @@
       </p>
 
       <h1 class="responsive-title fw-bold text-uppercase mb-3">
-        More than a gym
+        Not just a place to train.
       </h1>
 
       <p class="responsive-text text-secondary mb-0">
@@ -140,7 +141,7 @@
     <div class="container">
 
       <h2 class="fw-bold mb-4">
-        About the Team Members
+        Meet the people behind IRONFIT
       </h2>
 
       <div class="row g-4">
@@ -232,6 +233,66 @@
 
   </section>
 
+
+  <!-- Assignment 4 · Task 2: JavaScript FAQ accordion -->
+  <section class="py-5" id="faq">
+    <div class="container">
+      <p class="eyebrow mb-2">QUESTIONS & ANSWERS</p>
+      <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
+      <p class="text-secondary mb-4">Click a question to show its answer. Click again to hide it.</p>
+
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3 class="m-0">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+              Which membership plans are available?
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-answer-1" aria-hidden="true">
+            <div class="faq-answer-inner"><p>IRONFIT has Basic, Standard, and Premium plans. Visit the Pricing page to compare them.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3 class="m-0">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+              Can I train with a personal coach?
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-answer-2" aria-hidden="true">
+            <div class="faq-answer-inner"><p>Yes. Explore our Trainers page and use the Contact form to send a demo registration request.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3 class="m-0">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+              What time does the club open?
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-answer-3" aria-hidden="true">
+            <div class="faq-answer-inner"><p>The Contact page lists our opening hours as 06:00–23:00 daily.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3 class="m-0">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+              How can I choose a training program?
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-answer-4" aria-hidden="true">
+            <div class="faq-answer-inner"><p>Open the Programs page to compare Strength, Cardio, and Group Fitness.</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 
@@ -240,12 +301,14 @@
   <div class="container">
 
     <p class="mb-1">
-      Front-End Assignment #3 · Fitness Club Website
+      IRONFIT / FITNESS CLUB · STUDENT FRONT-END PROJECT
     </p>
 
     <p class="mb-0 text-secondary">
-      Team members: Абылайхан · Ерасыл · Арсен
+      BUILT BY АБЫЛАЙХАН · ЕРАСЫЛ · АРСЕН
     </p>
+    <!-- Assignment 4 · Task 5: dynamic local date & time -->
+    <p class="footer-clock mt-2 mb-0">Local date &amp; time: <time id="current-date-time">Loading...</time></p>
 
   </div>
 
@@ -255,6 +318,9 @@
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
+<script src="js/site.js" defer></script>
+<script src="js/about.js" defer></script>
 
 </body>
 </html>

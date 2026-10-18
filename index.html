@@ -18,11 +18,11 @@
 <body>
 
 <!-- BOOTSTRAP NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top site-navbar">
   <div class="container">
 
     <a class="navbar-brand fw-bold ironfit-logo" href="index.html">
-      IRON<span>FIT</span>
+      IRON<span>FIT</span><small class="brand-subtitle">FITNESS CLUB</small>
     </a>
 
     <button
@@ -66,6 +66,7 @@
         </li>
 
       </ul>
+      <a class="nav-join btn btn-success ms-lg-4 mt-3 mt-lg-0" href="contact.html">JOIN THE CLUB <span aria-hidden="true">↗</span></a>
 
     </div>
   </div>
@@ -84,12 +85,12 @@
         <div class="col-12 col-lg-6">
 
           <p class="eyebrow mb-2">
-            BUILD YOUR STRONGEST SELF
+            THE NEW STANDARD OF TRAINING
           </p>
 
           <h1 class="responsive-title fw-bold text-uppercase mb-4">
             Train harder.<br>
-            Feel stronger.
+            <span class="hero-accent">Feel stronger.</span>
           </h1>
 
           <p class="responsive-text text-secondary mb-4">
@@ -112,16 +113,19 @@
             </a>
 
           </div>
+          <p class="hero-note mb-0 mt-4">A PLACE TO START. A REASON TO KEEP GOING.</p>
 
         </div>
 
 
         <div class="col-12 col-lg-6">
 
-          <img
-            src="images/ironfit.png"
-            class="img-fluid rounded-4 hero-image"
-            alt="IRONFIT modern fitness club">
+          <div class="hero-media">
+            <img src="images/strength.webp" class="hero-image"
+                 alt="Athlete performing a strength workout in the gym">
+            <div class="hero-media-caption"><span class="live-dot"></span> TRAIN YOUR WAY <span aria-hidden="true">↗</span></div>
+            <span class="hero-photo-tag" aria-hidden="true">IRONFIT / 01</span>
+          </div>
 
         </div>
 
@@ -130,13 +134,23 @@
   </section>
 
 
+  <section class="quick-facts" aria-label="Club highlights">
+    <div class="container">
+      <div class="row g-0">
+        <div class="col-12 col-md-4 quick-fact"><strong>06:00–23:00</strong><span>OPEN EVERY DAY</span></div>
+        <div class="col-12 col-md-4 quick-fact"><strong>03</strong><span>WAYS TO TRAIN</span></div>
+        <div class="col-12 col-md-4 quick-fact"><strong>YOUR PACE</strong><span>YOUR KIND OF PROGRESS</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- TASK 2: CSS MEDIA QUERY CARDS - NO BOOTSTRAP GRID -->
   <section class="py-5 bg-panel">
 
     <div class="container">
 
       <h2 class="fw-bold mb-4">
-        Why choose IRONFIT?
+        Made for the way you move.
       </h2>
 
       <div class="mq-card-group">
@@ -190,7 +204,7 @@
         <div class="col-12 col-lg-6">
 
           <h2 class="fw-bold mb-4">
-            Everything you need in one club
+            Train for the feeling. Stay for the progress.
           </h2>
 
           <ul class="list-group list-group-flush iron-list">
@@ -222,7 +236,7 @@
 
 
   <!-- BOOTSTRAP CAROUSEL - 9 IMAGES -->
-  <section class="py-5 bg-panel">
+  <section class="py-5 gallery-section">
 
     <div class="container">
 
@@ -231,7 +245,7 @@
       </p>
 
       <h2 class="fw-bold mb-4">
-        IRONFIT Gallery
+        Inside IRONFIT
       </h2>
 
 
@@ -415,7 +429,47 @@
     </div>
   </section>
 
+  <!-- Assignment 4 · Task 3: JavaScript popup subscription form -->
+  <section class="py-5 subscribe-section">
+    <div class="container">
+      <div class="subscribe-banner rounded-4 p-4 p-lg-5 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+        <div>
+          <p class="eyebrow mb-2">IRONFIT UPDATES</p>
+          <h2 class="fw-bold mb-2">Your next chapter starts here.</h2>
+          <p class="text-secondary mb-0">Get training updates and explore our interactive sign-up demo.</p>
+        </div>
+        <button id="open-subscribe" type="button" class="btn btn-success btn-lg flex-shrink-0"
+                aria-haspopup="dialog" aria-controls="subscribe-modal">
+          Subscribe for updates
+        </button>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<!-- Assignment 4 · Task 3: hidden by default, opens via JavaScript -->
+<div id="subscribe-modal" class="popup-overlay" hidden>
+  <div class="popup-dialog rounded-4 p-4 p-sm-5" role="dialog" aria-modal="true"
+       aria-labelledby="subscribe-title" aria-describedby="subscribe-description" tabindex="-1">
+    <button id="close-subscribe" type="button" class="popup-close"
+            aria-label="Close subscription form">&times;</button>
+    <p class="eyebrow mb-2">IRONFIT NEWSLETTER</p>
+    <h2 class="fw-bold mb-3" id="subscribe-title">Join our updates</h2>
+    <p class="text-secondary" id="subscribe-description">
+      This is a JavaScript form demonstration. No details are sent to a server.
+    </p>
+    <form id="subscribe-form" novalidate>
+      <label class="form-label" for="subscribe-email">Email address</label>
+      <input type="email" id="subscribe-email" class="form-control mb-2" name="email"
+             placeholder="you@example.com" autocomplete="email" required
+             aria-describedby="subscribe-error">
+      <p id="subscribe-error" class="field-error" role="alert"></p>
+      <button type="submit" class="btn btn-success w-100 mt-3">Try subscription</button>
+      <p id="subscribe-status" class="form-feedback mt-3 mb-0" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
 
 
 <footer class="py-4 border-top border-secondary text-center">
@@ -423,12 +477,14 @@
   <div class="container">
 
     <p class="mb-1">
-      Front-End Assignment #3 · Fitness Club Website
+      IRONFIT / FITNESS CLUB · STUDENT FRONT-END PROJECT
     </p>
 
     <p class="mb-0 text-secondary">
-      Team members: Абылайхан · Ерасыл · Арсен
+      BUILT BY АБЫЛАЙХАН · ЕРАСЫЛ · АРСЕН
     </p>
+    <!-- Assignment 4 · Task 5: dynamic local date & time -->
+    <p class="footer-clock mt-2 mb-0">Local date &amp; time: <time id="current-date-time">Loading...</time></p>
 
   </div>
 
@@ -438,6 +494,9 @@
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
+<script src="js/site.js" defer></script>
+<script src="js/home.js" defer></script>
 
 </body>
 </html>

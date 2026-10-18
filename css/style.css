@@ -1,361 +1,351 @@
-/* ========================================
-   IRONFIT - ASSIGNMENT 3
-   MEDIA QUERIES + BOOTSTRAP
-======================================== */
+/* IRONFIT / Assignment 4
+   Student project using HTML, CSS, Bootstrap Grid and JavaScript.
+   Design: warm paper + forest ink + energetic lime.
+   All layouts remain straightforward to explain during defense. */
 
 :root {
-  --bg: #0d0f10;
-  --panel: #171a1d;
-  --panel-2: #22262a;
-  --text: #f5f7f8;
-  --muted: #aeb6bd;
-  --accent: #b6ff00;
-  --border: #30363b;
+  --bg: #f7f8f3;
+  --panel: #ebf0e7;
+  --panel-2: #ffffff;
+  --text: #18241f;
+  --muted: #65726b;
+  --accent: #d3fc54;
+  --accent-dark: #416a2f;
+  --dark: #172820;
+  --border: #d9e0d8;
 }
 
-
-/* ========================================
-   GLOBAL
-======================================== */
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* 01 — BASIC TYPOGRAPHY AND COLORS */
+html { scroll-behavior: smooth; }
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease;
 }
+h1,h2,h3,h4 { letter-spacing: -0.042em; }
+h1 { font-weight: 900; }
+h2 { font-weight: 850; }
+p { line-height: 1.7; }
+::selection { background: var(--accent); color: var(--dark); }
+a { text-underline-offset: 4px; }
+a:focus-visible, button:focus-visible { outline: 3px solid #668d37; outline-offset: 3px; }
+.bg-panel { background: var(--panel); }
+.text-secondary { color: var(--muted) !important; }
+.text-light { color: var(--text) !important; }
+.text-success { color: var(--accent-dark) !important; }
+.container { max-width: 1160px; }
 
-.bg-panel {
-  background-color: var(--panel);
-}
-
-.text-secondary {
-  color: var(--muted) !important;
-}
-
-
-/* ========================================
-   NAVBAR
-======================================== */
-
-.navbar {
+/* 02 — BOOTSTRAP NAVIGATION */
+.site-navbar {
+  background: rgba(249,250,246,0.97);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  min-height: 82px;
+  z-index: 1030;
 }
-
 .ironfit-logo {
-  letter-spacing: 2px;
+  font-size: 1.72rem;
+  font-weight: 900 !important;
+  letter-spacing: -0.075em;
+  line-height: .95;
+  color: var(--dark);
 }
-
-.ironfit-logo span {
-  color: var(--accent);
+.ironfit-logo:hover { color: var(--dark); }
+.ironfit-logo span { color: #709a2d; }
+.brand-subtitle {
+  display: block;
+  letter-spacing: 0.19em;
+  font-size: 0.55rem;
+  font-weight: 800;
+  margin-top: 6px;
 }
-
-.navbar .nav-link {
-  font-weight: 600;
+.site-navbar .nav-link {
+  color: #46544d;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border-radius: 8px;
+  padding: .6rem .12rem !important;
+  transition: color .2s;
 }
-
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: var(--accent);
+.site-navbar .nav-link:hover, .site-navbar .nav-link.active { color: #416a2f; }
+.nav-join {
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: .045em;
+  border-radius: 999px !important;
+  padding: .76rem 1.15rem;
+  white-space: nowrap;
 }
+.nav-join span { padding-left: .5rem; font-size: 1.02rem; }
 
+/* 03 — BOOTSTRAP BUTTON STYLES */
+.btn { font-weight: 750; border-radius: 11px; transition: all .2s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn-success {
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-color: var(--dark);
+  --bs-btn-hover-bg: #c0eb3f;
+  --bs-btn-hover-border-color: #c0eb3f;
+  --bs-btn-hover-color: var(--dark);
+  --bs-btn-active-bg: #bae43c;
+  --bs-btn-active-color: var(--dark);
+}
+.btn-outline-success {
+  --bs-btn-color: var(--accent-dark);
+  --bs-btn-border-color: #8baa7e;
+  --bs-btn-hover-bg: var(--dark);
+  --bs-btn-hover-border-color: var(--dark);
+  --bs-btn-hover-color: #fff;
+}
+.btn-outline-light {
+  --bs-btn-color: var(--dark);
+  --bs-btn-border-color: #91a397;
+  --bs-btn-hover-bg: var(--dark);
+  --bs-btn-hover-border-color: var(--dark);
+  --bs-btn-hover-color: #fff;
+}
+.hero-section .btn-outline-light {
+  --bs-btn-color: #f9fff2;
+  --bs-btn-border-color: #85948a;
+  --bs-btn-hover-bg: #f9fff2;
+  --bs-btn-hover-border-color: #f9fff2;
+  --bs-btn-hover-color: var(--dark);
+}
+.btn-group > .btn:first-child { border-radius: 11px 0 0 11px; }
+.btn-group > .btn:last-child { border-radius: 0 11px 11px 0; }
 
-/* ========================================
-   HERO
-======================================== */
-
+/* 04 — HOME HERO */
 .hero-section {
-  min-height: 75vh;
+  background: var(--dark);
+  color: white;
+  min-height: 690px;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
-
-.page-hero {
-  background-color: var(--panel);
-  border-bottom: 1px solid var(--border);
+.hero-section::before {
+  content: '';
+  position: absolute;
+  width: 510px; height: 510px;
+  border: 1px solid rgba(212,252,84,.13);
+  border-radius: 50%;
+  left: -250px; bottom: -360px;
+  pointer-events: none;
 }
-
-.eyebrow {
-  color: var(--accent);
-  font-weight: 900;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-}
-
-.hero-image {
-  width: 100%;
-  max-height: 520px;
-  object-fit: cover;
-}
-
-
-/* ========================================
-   TASK 1 - RESPONSIVE TYPOGRAPHY
-   Desktop
-======================================== */
-
+.hero-section .container { position: relative; z-index: 1; }
+.eyebrow { color: #659024; font-weight: 900; letter-spacing: .17em; font-size: .75rem; }
+.hero-section .eyebrow, .gallery-section .eyebrow { color: var(--accent); }
+.hero-section .text-secondary, .page-hero .text-secondary { color: #c9d6cc !important; }
 .responsive-title {
-  font-size: 4.5rem;
-  line-height: 0.95;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(3.1rem,5.1vw,5.35rem);
+  font-weight: 900;
+  line-height: .98;
+  text-transform: uppercase;
+  letter-spacing: -0.065em;
 }
-
-.responsive-text {
-  font-size: 1.25rem;
+.hero-accent { color: var(--accent); }
+.responsive-text { font-size: 1.11rem; max-width: 540px; }
+.hero-note { font-size: .68rem; letter-spacing: .17em; color: #a7b9a6; font-weight: 800; }
+.hero-media { position: relative; overflow: hidden; border-radius: 22px; background: #22342b; height: 510px; }
+.hero-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 50%,rgba(0,0,0,.55)); pointer-events: none; }
+.hero-media-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 20px; left: 20px; right: 20px;
+  display: flex; align-items: center; gap: 9px;
+  border-radius: 11px;
+  padding: 14px 15px;
+  background: rgba(255,255,255,.94);
+  color: var(--dark);
+  font-size: .85rem;
+  font-weight: 900;
+  letter-spacing: .035em;
 }
+.hero-media-caption > span:last-child { margin-left: auto; font-size: 1.15rem; }
+.live-dot { width: 9px; height: 9px; border-radius: 50%; background: #75a82e; flex: 0 0 auto; }
+.hero-photo-tag { position: absolute; z-index: 2; top: 18px; right: 18px; font-size: .68rem; letter-spacing: .12em; background: var(--accent); color: var(--dark); padding: 9px 11px; font-weight: 900; border-radius: 8px; }
+.quick-facts { background: var(--accent); }
+.quick-fact { padding: 26px 25px; border-right: 1px solid rgba(24,36,31,.17); display: flex; flex-direction: column; justify-content: center; }
+.quick-fact:last-child { border-right: 0; }
+.quick-fact strong { color: var(--dark); font-size: 1.42rem; font-weight: 900; letter-spacing: -.05em; line-height: 1.15; }
+.quick-fact span { color: #3f5932; font-size: .66rem; font-weight: 900; letter-spacing: .13em; margin-top: 7px; }
 
-
-/* ========================================
-   TASK 2 - CSS MEDIA QUERY CARD GROUP
-   NO BOOTSTRAP GRID
-======================================== */
-
-.mq-card-group {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+/* 05 — PAGE HERO */
+.page-hero { background: var(--dark); color: white; border-bottom: 3px solid var(--accent); position: relative; overflow: hidden; }
+.page-hero::after {
+  content: attr(data-section);
+  position: absolute; right: 6%; bottom: 20px;
+  font-size: .7rem; letter-spacing: .17em; font-weight: 800;
+  color: rgba(213,251,84,.8);
 }
+.page-hero::before { content: ''; width: 400px; height: 400px; border-radius: 50%; border: 1px solid rgba(211,252,84,.18); position: absolute; right: -150px; top: -265px; }
+.page-hero .eyebrow { color: var(--accent); }
+.page-hero .responsive-title { max-width: 1040px; font-size: clamp(2.75rem,5.4vw,4.65rem); }
 
+/* 06 — HOME MEDIA QUERY CARDS (NOT BOOTSTRAP GRID) */
+.mq-card-group { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; counter-reset: feature; }
 .mq-card {
-  background-color: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 24px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  background: white; border: 1px solid var(--border); border-radius: 17px;
+  padding: 31px 27px 29px;
+  min-height: 242px;
+  transition: transform .25s ease, box-shadow .25s ease;
+  counter-increment: feature;
 }
+.mq-card::before { content: '0' counter(feature); display: inline-flex; align-items: center; justify-content: center; background: var(--accent); color: var(--dark); font-size: .75rem; font-weight: 900; width: 39px; height: 39px; border-radius: 12px; margin-bottom: 25px; }
+.mq-card:hover { transform: translateY(-5px); box-shadow: 0 16px 38px rgba(20,46,29,.11); }
+.mq-card h3 { font-size: 1.24rem; font-weight: 900; }
+.mq-card p { color: var(--muted); font-size: .92rem; margin: 0; }
 
-.mq-card h3 {
-  font-size: 1.3rem;
-}
-
-.mq-card p {
-  color: var(--muted);
-  margin-bottom: 0;
-}
-
-.mq-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-}
-
-
-/* ========================================
-   BOOTSTRAP CARDS CUSTOMIZATION
-======================================== */
-
+/* 07 — BOOTSTRAP CARDS: PROGRAMS, TRAINERS, PRICING, TEAM */
 .bootstrap-card {
-  background-color: var(--panel);
+  background: var(--panel-2);
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 18px;
   overflow: hidden;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 8px 28px rgba(22,41,27,.045);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
+.bootstrap-card:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgba(21,50,25,.12); }
+.bootstrap-card .card-body { padding: 23px 24px 25px; }
+.bootstrap-card .card-title { font-size: 1.4rem; font-weight: 900; }
+.bootstrap-card .card-text { color: var(--muted); }
+.bootstrap-card .btn { padding: .78rem 1rem; font-size: .9rem; }
+.program-photo { height: 225px; width: 100%; object-fit: cover; }
+.trainer-photo { height: 340px; width: 100%; object-fit: cover; object-position: center top; }
+.team-photo { display: block; width: 146px; height: 146px; object-fit: cover; border-radius: 15px; border: 4px solid var(--accent); }
+/* Make plain photos and columns consistent on the remaining pages. */
+img.img-fluid.rounded-4 { border-radius: 19px !important; }
 
-.bootstrap-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-}
+/* 08 — GALLERY WITH EXISTING NINE-SLIDE BOOTSTRAP CAROUSEL */
+.gallery-section { background: var(--dark); color: #fff; }
+.gallery-section h2 { color: white; }
+.carousel { border: 1px solid rgba(211,252,84,.2); border-radius: 19px; overflow: hidden; }
+.carousel-image { height: 475px; object-fit: cover; }
+.carousel-caption { background: rgba(16,34,22,.83); padding: 14px 16px; border-radius: 10px; bottom: 30px; }
+.carousel-caption h5 { margin: 0; color: #fff; font-weight: 800; }
+.carousel-control-next-icon,.carousel-control-prev-icon { filter: drop-shadow(0 2px 4px rgba(0,0,0,.3)); }
+.carousel-indicators { bottom: 0; }
+.carousel-indicators [data-bs-target] { background-color: var(--accent); }
 
-.bootstrap-card .card-title {
-  font-weight: 700;
-}
+/* 09 — GYM FEATURES AND CONTENT LISTS */
+.iron-list .list-group-item { background: transparent; color: var(--text); border-color: var(--border); padding: 15px 1px; font-weight: 750; }
+.iron-list .list-group-item::before { content: '↗'; color: #5b8d37; margin-right: 12px; font-weight: 900; }
 
-
-/* ========================================
-   IMAGES
-======================================== */
-
-.program-photo {
-  height: 240px;
-  object-fit: cover;
-}
-
-.trainer-photo {
-  height: 340px;
-  object-fit: cover;
-}
-
-.team-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--accent);
-}
-
-
-/* ========================================
-   CAROUSEL
-======================================== */
-
-.carousel-image {
-  height: 550px;
-  object-fit: cover;
-}
-
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 12px;
-}
-
-.carousel-caption h5 {
-  margin-bottom: 0;
-  font-weight: 700;
-}
-
-
-/* ========================================
-   LIST
-======================================== */
-
-.iron-list .list-group-item {
-  background-color: transparent;
-  color: var(--muted);
-  border-color: var(--border);
-}
-
-
-/* ========================================
-   FORM
-======================================== */
-
-.contact-form {
-  background-color: var(--panel);
-  border: 1px solid var(--border);
-}
-
-.form-label,
-.form-check-label {
+/* 10 — CONTACT FORM AND TABLE */
+.contact-form { background: white; border: 1px solid var(--border); box-shadow: 0 20px 52px rgba(20,46,29,.06); }
+.form-label,.form-check-label { color: var(--text); font-weight: 700; }
+.form-label { font-size: .87rem; }
+.form-control,.form-select,.input-group-text {
+  background-color: #f5f7f2;
   color: var(--text);
+  border: 1px solid #dce4d8;
+  border-radius: 9px;
+  min-height: 47px;
 }
+.form-control::placeholder { color: #8a978c; }
+.form-control:focus,.form-select:focus { background: white; color: var(--text); border-color: #7fae46; box-shadow: 0 0 0 .2rem rgba(122,170,76,.14); }
+.input-group-text { border-radius: 9px 0 0 9px; }
+.input-group .form-control { border-radius: 0 9px 9px 0; }
+.form-check-input:checked { background-color: #557e31; border-color: #557e31; }
+.table-responsive { overflow-x: auto; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 14px 36px rgba(25,43,29,.05); }
+.table { margin-bottom: 0; }
+.table.table-dark { --bs-table-bg: #ffffff; --bs-table-color: var(--text); --bs-table-border-color: #e2e8e0; --bs-table-striped-bg: #f4f7f3; }
+.table.table-dark tbody tr:hover { --bs-table-bg: #f2f6ec; }
+.table .table-success { --bs-table-bg: var(--accent); --bs-table-color: var(--dark); --bs-table-border-color: #a9cc49; }
+.table.table-dark td, .table.table-dark th { padding: 16px; }
 
-.form-control,
-.form-select,
-.input-group-text {
-  background-color: #0f1113;
-  color: var(--text);
-  border-color: var(--border);
+/* 11 — JAVASCRIPT TASK 2: FAQ ACCORDION */
+.faq-list { max-width: 920px; display: grid; gap: 12px; }
+.faq-item { border: 1px solid var(--border); border-radius: 14px; background: #fff; overflow: hidden; }
+.faq-question { width: 100%; padding: 22px 24px; border: 0; background: transparent; color: var(--text); display: flex; justify-content: space-between; align-items: center; gap: 14px; text-align: left; font-size: 1.08rem; font-weight: 800; cursor: pointer; }
+.faq-question:hover, .faq-question[aria-expanded="true"] { color: #517c31; }
+.faq-symbol { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--dark); font-size: 1.45rem; line-height: 1; transition: transform .25s ease; flex: 0 0 auto; }
+.faq-question[aria-expanded="true"] .faq-symbol { transform: rotate(45deg); }
+.faq-answer { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .3s ease, opacity .3s ease; }
+.faq-answer.is-open { grid-template-rows: 1fr; opacity: 1; }
+.faq-answer-inner { min-height: 0; overflow: hidden; }
+.faq-answer-inner p { margin: 0; padding: 0 24px 22px; color: var(--muted); }
+
+/* 12 — JAVASCRIPT TASK 3: SUBSCRIPTION POPUP */
+.subscribe-section { background: var(--bg); }
+.subscribe-banner { background: var(--accent); color: var(--dark); border: 0; border-radius: 19px !important; }
+.subscribe-banner .eyebrow { color: #3e6627; }
+.subscribe-banner h2 { font-size: clamp(1.8rem,3.4vw,2.65rem); }
+.subscribe-banner .text-secondary { color: #4f6644 !important; }
+.subscribe-banner .btn-success { --bs-btn-bg: var(--dark); --bs-btn-border-color: var(--dark); --bs-btn-color: white; --bs-btn-hover-bg: #294638; --bs-btn-hover-border-color: #294638; --bs-btn-hover-color: white; }
+.popup-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(12,29,17,.82); display: flex; justify-content: center; align-items: center; padding: 20px; overflow-y: auto; }
+.popup-overlay[hidden] { display: none; }
+.popup-dialog { width: min(100%,480px); position: relative; background: #fff; border: 1px solid var(--border); box-shadow: 0 25px 80px rgba(0,0,0,.3); color: var(--text); animation: popup-enter .23s ease-out; }
+.popup-close { position: absolute; top: 12px; right: 14px; padding: 0 7px; color: var(--dark); background: transparent; border: 0; font-size: 2rem; cursor: pointer; }
+.popup-close:hover { color: var(--accent-dark); }
+body.popup-open { overflow: hidden; }
+@keyframes popup-enter { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* 13 — JAVASCRIPT TASK 1: VALIDATION FEEDBACK */
+.field-error { color: #c02c45; font-size: .85rem; margin: .3rem 0 0; }
+.field-error:empty,.form-feedback:empty { display: none; }
+.form-feedback { color: #316926; font-weight: 800; font-size: .92rem; }
+.form-feedback.is-error { color: #c02c45; }
+.form-note { font-size: .84rem; }
+.contact-form .form-control.is-invalid,.popup-dialog .form-control.is-invalid { border-color: #d34458; background-image: none; }
+
+/* 14 — JAVASCRIPT TASK 4: BACKGROUND-COLOR SWITCH */
+.theme-control { width: fit-content; max-width: 100%; background: #f5f8ef; border: 1px solid #dce6d6; color: var(--text); }
+.page-hero .theme-control .text-secondary { color: #556c57 !important; }
+
+/* 15 — JAVASCRIPT TASK 5: CLOCK & FOOTER */
+footer { background: #0d2017; color: #eaf2e8; border-color: #254233 !important; }
+footer .text-secondary { color: #b4c3b5 !important; }
+.footer-clock { color: #b4c3b5; font-size: .85rem; }
+.footer-clock time { color: var(--accent); font-variant-numeric: tabular-nums; }
+
+/* 16 — MEDIA QUERIES / RESPONSIVE TYPOGRAPHY AND CARD GRID */
+@media (max-width: 1199.98px) {
+  .hero-section { min-height: 620px; }
+  .hero-media { height: 450px; }
 }
-
-.form-control::placeholder {
-  color: #747b80;
-}
-
-.form-control:focus,
-.form-select:focus {
-  background-color: #0f1113;
-  color: var(--text);
-  border-color: var(--accent);
-
-  box-shadow:
-    0 0 0 0.2rem rgba(182, 255, 0, 0.15);
-}
-
-.form-check-input:checked {
-  background-color: var(--accent);
-  border-color: var(--accent);
-}
-
-
-/* ========================================
-   TABLE
-======================================== */
-
-.table-success {
-  --bs-table-bg: var(--accent);
-  --bs-table-color: #111;
-}
-
-
-/* ========================================
-   BOOTSTRAP BUTTON CUSTOM COLORS
-======================================== */
-
-.btn-success {
-  --bs-btn-bg: var(--accent);
-  --bs-btn-border-color: var(--accent);
-  --bs-btn-color: #0b0d0e;
-
-  --bs-btn-hover-bg: #9ee000;
-  --bs-btn-hover-border-color: #9ee000;
-  --bs-btn-hover-color: #0b0d0e;
-}
-
-.btn-outline-success {
-  --bs-btn-color: var(--accent);
-  --bs-btn-border-color: var(--accent);
-
-  --bs-btn-hover-bg: var(--accent);
-  --bs-btn-hover-border-color: var(--accent);
-  --bs-btn-hover-color: #0b0d0e;
-}
-
-
-/* ========================================
-   TABLET MEDIA QUERY
-======================================== */
-
 @media (max-width: 991.98px) {
-
-  .responsive-title {
-    font-size: 3.2rem;
-  }
-
-  .responsive-text {
-    font-size: 1.1rem;
-  }
-
-  /* Task 2:
-     tablet = 2 cards per row */
-  .mq-card-group {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-section {
-    min-height: auto;
-  }
-
-  .carousel-image {
-    height: 420px;
-  }
-
+  .responsive-title { font-size: 3.2rem; }
+  .responsive-text { font-size: 1.05rem; }
+  .mq-card-group { grid-template-columns: repeat(2,1fr); }
+  .hero-section { min-height: auto; }
+  .hero-media { height: 420px; }
+  .site-navbar .navbar-collapse { padding: 14px 0 20px; }
+  .site-navbar .nav-link { padding: 10px 0 !important; }
+  .nav-join { display: inline-flex; }
+  .quick-fact { padding: 20px 18px; }
+  .carousel-image { height: 420px; }
 }
-
-
-/* ========================================
-   MOBILE MEDIA QUERY
-======================================== */
-
+@media (max-width: 767.98px) {
+  /* Prevent large Bootstrap g-5 gutters from pushing rows off-screen. */
+  .row.g-5 { --bs-gutter-x: 1.5rem; --bs-gutter-y: 2rem; }
+  .quick-fact { border-right: 0; border-bottom: 1px solid rgba(24,36,31,.16); }
+  .quick-fact:last-child { border-bottom: 0; }
+  .quick-fact strong { font-size: 1.25rem; }
+  .hero-section .container { padding-top: 20px; padding-bottom: 15px; }
+}
 @media (max-width: 575.98px) {
-
-  .responsive-title {
-    font-size: 2.3rem;
-  }
-
-  .responsive-text {
-    font-size: 1rem;
-  }
-
-  /* Task 2:
-     mobile = cards vertically */
-  .mq-card-group {
-    grid-template-columns: 1fr;
-  }
-
-  .carousel-image {
-    height: 280px;
-  }
-
-  .trainer-photo {
-    height: 300px;
-  }
-
+  .responsive-title { font-size: clamp(2.3rem,10.8vw,3.3rem); }
+  .responsive-text { font-size: 1rem; }
+  .mq-card-group { grid-template-columns: 1fr; }
+  .mq-card { min-height: 0; }
+  .hero-media { height: 360px; }
+  .hero-section .btn-group { display: flex; width: 100%; }
+  .hero-section .btn-group > .btn { flex: 1; font-size: .85rem; padding: .8rem .55rem; }
+  .carousel-image { height: 290px; }
+  .trainer-photo { height: 300px; }
+  .page-hero::after { display: none; }
+  .theme-control { width: 100%; }
+  .theme-control .btn { width: 100%; }
+  .bootstrap-card .card-body { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; }
 }
