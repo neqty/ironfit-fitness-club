@@ -13,6 +13,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/assignment5.css">
 </head>
 
 <body>
@@ -303,6 +304,22 @@
 
   </section>
 
+<section class="container a5-exercise" aria-label="Demo two step trial form">
+  <h2>Try a free intro session</h2>
+  <p>This is a local demo. No real request is sent.</p>
+  <form id="a5-trial-form">
+    <div class="a5-step"><label for="a5-trial-name">Your name</label><input id="a5-trial-name" type="text" autocomplete="name"></div>
+    <div class="a5-step" hidden><label for="a5-trial-program">Training type</label>
+      <select id="a5-trial-program"><option>Strength</option><option>Cardio</option><option>Group Fitness</option></select>
+    </div>
+    <div class="a5-actions">
+      <button id="a5-back" type="button" class="btn btn-outline-success">Back</button>
+      <button id="a5-next" type="button" class="btn btn-success">Next</button>
+      <button id="a5-finish" type="submit" class="btn btn-success">Finish</button>
+    </div>
+    <p id="a5-trial-message" role="status" class="mt-3"></p>
+  </form>
+</section>
 </main>
 
 
@@ -332,5 +349,6 @@
 <script src="js/site.js" defer></script>
 <script src="js/contact.js" defer></script>
 
+  <script src="js/assignment5-contact.js" defer></script>
 </body>
 </html>

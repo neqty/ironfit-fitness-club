@@ -13,6 +13,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/assignment5.css">
 </head>
 
 <body>
@@ -218,6 +219,16 @@
 
   </section>
 
+<section class="container a5-exercise" aria-label="Program chooser">
+  <h2>Find your training program</h2>
+  <label for="a5-program-select">Choose a program</label>
+  <select id="a5-program-select" class="form-select mb-3">
+    <option value="">Select a program</option>
+    <option>Strength</option><option>Cardio</option><option>Group Fitness</option>
+  </select>
+  <p id="a5-program-result" role="status">Choose a program.</p>
+  <ul id="a5-program-list"></ul>
+</section>
 </main>
 
 
@@ -246,5 +257,6 @@
 
 <script src="js/site.js" defer></script>
 
+  <script src="js/assignment5-programs.js" defer></script>
 </body>
 </html>

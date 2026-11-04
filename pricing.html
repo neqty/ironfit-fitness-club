@@ -13,6 +13,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/assignment5.css">
 </head>
 
 <body>
@@ -296,6 +297,16 @@
 
   </section>
 
+<section class="container a5-exercise" aria-label="Price filter">
+  <h2>Find an affordable plan</h2>
+  <label for="a5-price-select">Maximum monthly price</label>
+  <select id="a5-price-select" class="form-select mb-3">
+    <option value="15000">15,000 ₸</option>
+    <option value="25000">25,000 ₸</option>
+    <option value="40000" selected>40,000 ₸</option>
+  </select>
+  <ul id="a5-price-list" aria-live="polite"></ul>
+</section>
 </main>
 
 
@@ -325,5 +336,6 @@
 <script src="js/site.js" defer></script>
 <script src="js/pricing.js" defer></script>
 
+  <script src="js/assignment5-pricing.js" defer></script>
 </body>
 </html>
