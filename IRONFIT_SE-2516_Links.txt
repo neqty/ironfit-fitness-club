@@ -1,5 +1,8 @@
-IRONFIT Fitness Club — Final Project, group SE-2516
-GitHub repository: https://github.com/neqty/ironfit-fitness-club
-Final Project review branch: https://github.com/neqty/ironfit-fitness-club/tree/final/ironfit-2026-11-18
-Published website: PENDING — add real HTTPS URL after deploying
-Students: Балағазы Абылайхан, Құралбай Ерасыл, Еркінбек Арсен
+IRONFIT Fitness Club — Final Project
+Group: SE-2516
+
+GitHub Repository: https://github.com/neqty/ironfit-fitness-club
+Live Website: https://neqty.github.io/ironfit-fitness-club/
+
+GitHub Pages deployment: success, 18 November 2026.
+Team: Абылайхан Балағазы, Ерасыл Құралбай, Арсен Еркінбек
