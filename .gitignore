@@ -1,0 +1,13 @@
+# OS and editor files
+.DS_Store
+**/.DS_Store
+__MACOSX/
+.vscode/
+.idea/
+*.swp
+# Dependency caches and temporary files
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
