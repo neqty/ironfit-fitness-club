@@ -46,22 +46,19 @@ Open-Meteo Forecast API: https://open-meteo.com/en/docs
 
 Uses `fetch`, `async/await`, Astana coordinates (51.1694, 71.4491), temperature, WMO weather code, wind and the API's local timestamp. Loading, success, malformed response, HTTP/network failure and a 12-second timeout are handled. Refresh allows a new request. No API key, backend or fabricated fallback data is used. An internet connection is required only for weather. Open-Meteo attribution is displayed in the weather panel.
 
-## Hosting — live publication still required
+## Hosting — GitHub Pages
 
 Repository: https://github.com/neqty/ironfit-fitness-club
-Final Project code must be checked on the separate integration branch before merging to `main`. A live hosted URL has not been verified; do not claim hosting is complete. `IRONFIT_SE-2516_Links.txt` records the repository and leaves the live site URL pending.
+GitHub Pages: https://neqty.github.io/ironfit-fitness-club/
 
-Publication checklist:
-1. Review and publish the complete project folder, keeping its relative paths.
-2. GitHub Pages: publish the branch root with `index.html` at its root. A `.nojekyll` file is included. A project subpath works because assets and page links are relative.
-3. Alternatively, deploy this folder to Netlify as a static site. No build command is needed; publish the directory containing `index.html`.
-4. Use HTTPS, verify all nine pages and live API, then replace the pending live-site URL in the links file with the verified URL.
-5. Confirm image usage rights before any use beyond this student submission. Images include user-supplied assets and retained Assignment 6 originals; no ownership or celebrity endorsement is asserted.
+The GitHub Pages deploy job reported **success** on 18 November 2026 for the Final Project merge commit `e8c522904eab58019e1a1994ba505a7004d7a05d` and reported the URL above. This verifies a successful deployment workflow, not end-to-end browser validation of each live page. Before presenting, open the live HTTPS site and verify all nine pages, images, authentication demo and current weather API.
+
+The site uses relative paths and includes `.nojekyll`; no build process or API key is needed. Authentication and enquiries are browser-only simulations. Check asset usage rights before use beyond coursework.
 
 ## Submission and presentation
 
 Deadline supplied by the assignment: **18 November 2026, 23:59**.
-Each of the three students submits the ZIP, PDF report and TXT links file together in Moodle's **FINAL EXAM FOLDER**. Hosting must be completed before claiming the hosting requirement is met.
+Each of the three students submits the ZIP, PDF report and TXT links file together in Moodle's **FINAL EXAM FOLDER**. Confirm the published Pages URL loads and every feature works in your browser before Moodle submission.
 
 See `docs/PRESENTATION.md` for a 4:45 three-person demonstration and `docs/TESTING.md` for actual checks and limitations.
 
