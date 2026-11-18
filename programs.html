@@ -1,262 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <!-- Page created by Абылайхан -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Programs | IRONFIT</title>
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/assignment5.css">
-</head>
-
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-light sticky-top site-navbar">
-  <div class="container">
-
-    <a class="navbar-brand fw-bold ironfit-logo" href="index.html">
-      IRON<span>FIT</span><small class="brand-subtitle">FITNESS CLUB</small>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Programs | IRONFIT
+  </title>
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <meta content="Find your training routine at IRONFIT: strength, cardio, group fitness and flexible memberships." name="description"/>
+  <script src="js/theme.js">
+  </script>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">
+   Skip to content
+  </a>
+  <nav aria-label="Main navigation" class="navbar navbar-expand-xl sticky-top site-navbar">
+   <div class="container">
+    <a class="navbar-brand ironfit-logo" href="index.html">
+     <img alt="" class="brand-mark" height="44" src="images/ironfit-logo.png" width="44"/>
+     IRON
+     <span>
+      FIT
+     </span>
+     <small class="brand-subtitle">
+      FITNESS CLUB
+     </small>
     </a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mainNavbar"
-      aria-controls="mainNavbar"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-
-      <span class="navbar-toggler-icon"></span>
+    <button aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#mainNavbar" data-bs-toggle="collapse" type="button">
+     <span aria-hidden="true">
+      ☰
+     </span>
     </button>
-
     <div class="collapse navbar-collapse" id="mainNavbar">
-
-      <ul class="navbar-nav ms-auto gap-lg-3">
-
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="programs.html">Programs</a></li>
-        <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-
-      </ul>
-      <a class="nav-join btn btn-success ms-lg-4 mt-3 mt-lg-0" href="contact.html">JOIN THE CLUB <span aria-hidden="true">↗</span></a>
-
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-item">
+       <a aria-current="page" class="nav-link active" href="programs.html">
+        Programs
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="trainers.html">
+        Trainers
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="pricing.html">
+        Pricing
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="contact.html">
+        Contact
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" data-auth-link="" href="login.html">
+        Log In
+       </a>
+      </li>
+     </ul>
+     <div class="nav-actions">
+      <button aria-label="Switch to dark mode" aria-pressed="false" class="theme-toggle" id="theme-toggle" type="button">
+       <span aria-hidden="true">
+        ◐
+       </span>
+       <span id="theme-label">
+        Dark
+       </span>
+      </button>
+      <a class="btn btn-success nav-join" href="signup.html">
+       Join IRONFIT
+       <span aria-hidden="true">
+        ↗
+       </span>
+      </a>
+     </div>
     </div>
-  </div>
-</nav>
-
-
-<main>
-
-  <section class="page-hero py-5" data-section="03 / PROGRAMS">
-
+   </div>
+  </nav>
+  <main id="main-content">
+   <section class="page-hero py-5" data-section="03 / PROGRAMS">
     <div class="container py-lg-4">
-
-      <p class="eyebrow mb-2">
-        TRAINING PROGRAMS
-      </p>
-
-      <h1 class="responsive-title fw-bold text-uppercase mb-3">
-        Find your kind of strong.
-      </h1>
-
-      <p class="responsive-text text-secondary mb-0">
-        Different goals need different training styles.
-      </p>
-
+     <p class="eyebrow mb-2">
+      TRAINING PROGRAMS
+     </p>
+     <h1 class="responsive-title fw-bold text-uppercase mb-3">
+      Find your kind of strong.
+     </h1>
+     <p class="responsive-text text-secondary mb-0">
+      Different goals need different training styles.
+     </p>
     </div>
-
-  </section>
-
-
-  <!-- BOOTSTRAP 3 COLUMN GRID + CARDS -->
-  <section class="py-5">
-
+   </section>
+   <section class="py-5">
     <div class="container">
-
-      <div class="row g-4">
-
-
-        <div class="col-12 col-md-6 col-lg-4">
-
-          <article class="card bootstrap-card h-100">
-
-            <img
-              src="images/strength.webp"
-              class="card-img-top program-photo"
-              alt="Strength training">
-
-            <div class="card-body d-flex flex-column">
-
-              <h3 class="card-title">
-                Strength
-              </h3>
-
-              <p class="card-text text-secondary">
-                Build muscle and improve total-body strength.
-              </p>
-
-              <ul class="text-secondary">
-                <li>Free weights</li>
-                <li>Machines</li>
-                <li>Progress tracking</li>
-              </ul>
-
-              <a
-                class="btn btn-success mt-auto"
-                href="contact.html">
-                Start Strength
-              </a>
-
-            </div>
-          </article>
-
-        </div>
-
-
-        <div class="col-12 col-md-6 col-lg-4">
-
-          <article class="card bootstrap-card h-100">
-
-            <img
-              src="images/cardio.jpg"
-              class="card-img-top program-photo"
-              alt="Cardio training">
-
-            <div class="card-body d-flex flex-column">
-
-              <h3 class="card-title">
-                Cardio
-              </h3>
-
-              <p class="card-text text-secondary">
-                Improve endurance and heart health.
-              </p>
-
-              <ul class="text-secondary">
-                <li>Treadmills</li>
-                <li>Bikes</li>
-                <li>Interval sessions</li>
-              </ul>
-
-              <a
-               class="btn btn-success mt-auto"
-               href="contact.html">
-              Start Cardio
-              </a>
-
-            </div>
-          </article>
-
-        </div>
-
-
-        <div class="col-12 col-md-6 col-lg-4">
-
-          <article class="card bootstrap-card h-100">
-
-            <img
-              src="images/group.webp"
-              class="card-img-top program-photo"
-              alt="Group fitness">
-
-            <div class="card-body d-flex flex-column">
-
-              <h3 class="card-title">
-                Group Fitness
-              </h3>
-
-              <p class="card-text text-secondary">
-                Train with energy and motivation in a group.
-              </p>
-
-              <ul class="text-secondary">
-                <li>HIIT</li>
-                <li>Functional training</li>
-                <li>Mobility</li>
-              </ul>
-
-              <a
-                class="btn btn-success mt-auto"
-                href="contact.html">
-                Join Class
-              </a>
-
-            </div>
-          </article>
-
-        </div>
-
+     <div class="program-search-panel mb-4">
+      <div>
+       <p class="eyebrow">
+        YOUR GOAL. YOUR PROGRAM.
+       </p>
+       <h2>
+        Find your next workout
+       </h2>
+       <p class="text-secondary">
+        Search a program, exercise or goal. Try “strength”, “bikes” or “mobility”.
+       </p>
       </div>
-    </div>
-  </section>
-
-
-  <section class="py-5 bg-panel">
-
-    <div class="container">
-
-      <h2 class="fw-bold mb-3">
-        Page creator
-      </h2>
-
-      <p class="text-secondary mb-0">
-        <strong class="text-light">Абылайхан</strong>
-        created the Programs and Home pages.
+      <label class="form-label" for="program-search">
+       Search programs
+      </label>
+      <div class="program-search-wrap">
+       <input aria-autocomplete="list" aria-controls="search-suggestions" aria-describedby="search-count" aria-expanded="false" autocomplete="off" class="form-control" id="program-search" placeholder="What do you want to train?" role="combobox" type="search"/>
+       <ul hidden="" id="search-suggestions" role="listbox">
+       </ul>
+      </div>
+      <p class="mt-3 mb-0" id="search-count" role="status">
+       3 programs available
       </p>
-
+      <p hidden="" id="search-empty">
+       No programs found. Try another keyword or clear your search.
+      </p>
+     </div>
+     <div class="row g-4" id="program-grid">
+      <div class="col-12 col-md-6 col-lg-4">
+       <article class="card bootstrap-card h-100">
+        <img alt="Strength training" class="card-img-top program-photo" decoding="async" loading="lazy" src="images/strength-session.png"/>
+        <div class="card-body d-flex flex-column">
+         <h3 class="card-title">
+          Strength
+         </h3>
+         <p class="card-text text-secondary">
+          Build muscle and improve total-body strength.
+         </p>
+         <ul class="text-secondary">
+          <li>
+           Free weights
+          </li>
+          <li>
+           Machines
+          </li>
+          <li>
+           Progress tracking
+          </li>
+         </ul>
+         <a class="btn btn-success mt-auto" href="signup.html">
+          Start Strength
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+       <article class="card bootstrap-card h-100">
+        <img alt="Cardio training" class="card-img-top program-photo" decoding="async" loading="lazy" src="images/cardio-zone.png"/>
+        <div class="card-body d-flex flex-column">
+         <h3 class="card-title">
+          Cardio
+         </h3>
+         <p class="card-text text-secondary">
+          Improve endurance and heart health.
+         </p>
+         <ul class="text-secondary">
+          <li>
+           Treadmills
+          </li>
+          <li>
+           Bikes
+          </li>
+          <li>
+           Interval sessions
+          </li>
+         </ul>
+         <a class="btn btn-success mt-auto" href="signup.html">
+          Start Cardio
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+       <article class="card bootstrap-card h-100">
+        <img alt="Group fitness" class="card-img-top program-photo" decoding="async" loading="lazy" src="images/group-session.png"/>
+        <div class="card-body d-flex flex-column">
+         <h3 class="card-title">
+          Group Fitness
+         </h3>
+         <p class="card-text text-secondary">
+          Train with energy and motivation in a group.
+         </p>
+         <ul class="text-secondary">
+          <li>
+           HIIT
+          </li>
+          <li>
+           Functional training
+          </li>
+          <li>
+           Mobility
+          </li>
+         </ul>
+         <a class="btn btn-success mt-auto" href="signup.html">
+          Join Class
+         </a>
+        </div>
+       </article>
+      </div>
+     </div>
     </div>
-
-  </section>
-
-<section class="container a5-exercise" aria-label="Program chooser">
-  <h2>Find your training program</h2>
-  <label for="a5-program-select">Choose a program</label>
-  <select id="a5-program-select" class="form-select mb-3">
-    <option value="">Select a program</option>
-    <option>Strength</option><option>Cardio</option><option>Group Fitness</option>
-  </select>
-  <p id="a5-program-result" role="status">Choose a program.</p>
-  <ul id="a5-program-list"></ul>
-</section>
-</main>
-
-
-<footer class="py-4 border-top border-secondary text-center">
-
-  <div class="container">
-
-    <p class="mb-1">
-      IRONFIT / FITNESS CLUB · STUDENT FRONT-END PROJECT
-    </p>
-
-    <p class="mb-0 text-secondary">
-      BUILT BY АБЫЛАЙХАН · ЕРАСЫЛ · АРСЕН
-    </p>
-    <!-- Assignment 4 · Task 5: dynamic local date & time -->
-    <p class="footer-clock mt-2 mb-0">Local date &amp; time: <time id="current-date-time">Loading...</time></p>
-
-  </div>
-
-</footer>
-
-
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
-<script src="js/site.js" defer></script>
-
-  <script src="js/assignment5-programs.js" defer></script>
-</body>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container footer-grid">
+    <div>
+     <a class="ironfit-logo" href="index.html">
+      <img alt="" class="brand-mark" height="44" src="images/ironfit-logo.png" width="44"/>
+      IRON
+      <span>
+       FIT
+      </span>
+     </a>
+     <p>
+      Build a routine. Find your strength.
+     </p>
+    </div>
+    <div>
+     <a href="programs.html">
+      Explore programs
+     </a>
+     <a href="pricing.html">
+      Memberships
+     </a>
+     <a href="contact.html">
+      Get in touch
+     </a>
+    </div>
+    <div>
+     <strong>
+      SE-2516 · Student project
+     </strong>
+     <p>
+      Абылайхан · Ерасыл · Арсен
+     </p>
+     <small>
+      Concept fitness club. No real bookings or payments.
+     </small>
+    </div>
+   </div>
+  </footer>
+  <script defer="" src="js/site.js">
+  </script>
+  <script defer="" src="js/programs.js">
+  </script>
+  <script defer="" src="js/vendor/bootstrap.bundle.min.js">
+  </script>
+ </body>
 </html>
