@@ -1,96 +1,37 @@
-// Assignment 4 · Task 3: open/close a popup subscription form using JavaScript.
-(() => {
-  'use strict';
-
-  const overlay = document.getElementById('subscribe-modal');
-  const openButton = document.getElementById('open-subscribe');
-  const closeButton = document.getElementById('close-subscribe');
-  const dialog = overlay?.querySelector('[role="dialog"]');
-  const form = document.getElementById('subscribe-form');
-  const emailInput = document.getElementById('subscribe-email');
-  const emailError = document.getElementById('subscribe-error');
-  const status = document.getElementById('subscribe-status');
-
-  if (!overlay || !openButton || !closeButton || !dialog || !form || !emailInput || !emailError || !status) return;
-
-  let previousFocus = null;
-
-  function openPopup() {
-    previousFocus = document.activeElement;
-    overlay.hidden = false;
-    document.body.classList.add('popup-open');
-    emailError.textContent = '';
-    status.textContent = '';
-    emailInput.classList.remove('is-invalid');
-    emailInput.removeAttribute('aria-invalid');
-    emailInput.focus();
+'use strict';
+// Start each concept statistic once when its section becomes visible.
+const counters = [...document.querySelectorAll('[data-count]')];
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function animateCounter(counter) {
+  const target = Number(counter.dataset.count);
+  const suffix = counter.dataset.suffix || '';
+  const show = value => { counter.textContent = value.toLocaleString('en-US') + suffix; };
+  if (reducedMotion.matches) { show(target); return; }
+  const started = performance.now();
+  function frame(now) {
+    const progress = Math.min((now - started) / 1400, 1);
+    show(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+    if (progress < 1 && !reducedMotion.matches) requestAnimationFrame(frame);
+    else show(target);
   }
-
-  function closePopup() {
-    overlay.hidden = true;
-    document.body.classList.remove('popup-open');
-    if (previousFocus instanceof HTMLElement) previousFocus.focus();
-  }
-
-  openButton.addEventListener('click', openPopup);
-  closeButton.addEventListener('click', closePopup);
-
-  // Clicking outside the actual dialog closes the popup.
-  overlay.addEventListener('click', (event) => {
-    if (event.target === overlay) closePopup();
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (overlay.hidden) return;
-
-    if (event.key === 'Escape') {
-      closePopup();
-      return;
-    }
-
-    // Keep keyboard focus within the open modal.
-    if (event.key === 'Tab') {
-      const controls = [...dialog.querySelectorAll('button, input, select, textarea, a[href]')]
-        .filter((element) => !element.disabled);
-      const first = controls[0];
-      const last = controls[controls.length - 1];
-      if (!first || !last) return;
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
+  requestAnimationFrame(frame);
+}
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
       }
-    }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(counter => observer.observe(counter));
+}
+const gallery = document.getElementById('ironfitCarousel');
+// Explicit initialization enables arrow keys and touch before the first click.
+if (gallery && window.bootstrap) {
+  bootstrap.Carousel.getOrCreateInstance(gallery, { interval: false, touch: true, keyboard: true });
+  gallery.addEventListener('slid.bs.carousel', event => {
+    document.getElementById('gallery-status').textContent = `Slide ${event.to + 1} of ${gallery.querySelectorAll('.carousel-item').length}`;
   });
-
-  emailInput.addEventListener('input', () => {
-    emailError.textContent = '';
-    status.textContent = '';
-    emailInput.classList.remove('is-invalid');
-    emailInput.removeAttribute('aria-invalid');
-  });
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Demo only: there is no backend for sending data.
-    const email = emailInput.value.trim();
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-    if (!validEmail) {
-      emailError.textContent = 'Enter a valid email address.';
-      emailInput.classList.add('is-invalid');
-      emailInput.setAttribute('aria-invalid', 'true');
-      status.textContent = '';
-      emailInput.focus();
-      return;
-    }
-
-    emailInput.classList.remove('is-invalid');
-    emailInput.removeAttribute('aria-invalid');
-    emailError.textContent = '';
-    status.textContent = 'Demo successful: the email passed validation. Nothing was sent or saved.';
-    form.reset();
-  });
-})();
+}
